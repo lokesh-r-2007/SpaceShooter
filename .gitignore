@@ -1,0 +1,9 @@
+# Ignore sample files
+sample.html
+sample1.js
+index.css
+
+# Node artifacts (if any)
+node_modules/
+npm-debug.log
+.DS_Store
