@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPACE DEFENDER - Arcade Game</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Game Stats & Controls -->
+    <div id="gameHUD">
+        <div id="leftStats">
+            <div class="stat-box"><span class="stat-label">COINS</span><span class="stat-value" id="coins">0</span></div>
+            <div class="stat-box"><span class="stat-label">SCORE</span><span class="stat-value" id="score">0</span></div>
+        </div>
+        <div id="centerControls">
+            <button id="startBtn" class="btn-primary">START GAME</button>
+            <button id="shopBtn" class="btn-secondary">SHOP</button>
+        </div>
+        <div id="rightStats">
+            <div class="stat-box"><span class="stat-label">WAVE</span><span class="stat-value" id="wave">1</span></div>
+            <div class="stat-box"><span class="stat-label">WEAPON</span><span class="stat-value" id="weaponType">BASIC</span></div>
+        </div>
+    </div>
+
+    <!-- Shop Menu -->
+    <div id="shopMenu" class="modal hidden">
+        <div class="shop-container">
+            <button class="close-btn" id="closeShop">✕</button>
+            <h2 class="shop-title">⚡ WEAPON SHOP ⚡</h2>
+            <div class="shop-grid">
+                <div class="weapon-card">
+                    <div class="weapon-icon">🔫</div>
+                    <div class="weapon-name">BASIC</div>
+                    <div class="weapon-desc">Single shot</div>
+                    <div class="weapon-cost">OWNED</div>
+                </div>
+                <div class="weapon-card buyable" data-weapon="dual">
+                    <div class="weapon-icon">🔫🔫</div>
+                    <div class="weapon-name">DUAL</div>
+                    <div class="weapon-desc">Two parallel shots</div>
+                    <button class="buy-btn">💰 500</button>
+                </div>
+                <div class="weapon-card buyable" data-weapon="triple">
+                    <div class="weapon-icon">🔫🔫🔫</div>
+                    <div class="weapon-name">TRIPLE</div>
+                    <div class="weapon-desc">3-way spread shot</div>
+                    <button class="buy-btn">💰 1500</button>
+                </div>
+                <div class="weapon-card buyable" data-weapon="laser">
+                    <div class="weapon-icon">⚡</div>
+                    <div class="weapon-name">LASER</div>
+                    <div class="weapon-desc">High damage beam</div>
+                    <button class="buy-btn">💰 3000</button>
+                </div>
+            </div>
+            <div class="shop-upgrades">
+                <h3>UPGRADES</h3>
+                <div class="upgrade-item">
+                    <span>🚀 Speed Boost</span>
+                    <button class="upgrade-btn" id="upgradeSpeed">+500</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over / Win Screen -->
+    <div id="gameOverScreen" class="modal hidden">
+        <div class="gameover-container">
+            <h1 id="gameOverTitle" class="gameover-title">GAME OVER</h1>
+            <div class="gameover-stats">
+                <p>Final Score: <span id="finalScore">0</span></p>
+                <p>Wave Reached: <span id="finalWave">1</span></p>
+                <p>Total Coins: <span id="finalCoins">0</span></p>
+                <p>Accuracy: <span id="finalAccuracy">0</span>%</p>
+            </div>
+            <button id="restartBtn" class="btn-primary">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas" width="1000" height="700"></canvas>
+    <script src="index.js"></script>
+</body>
+</html>
